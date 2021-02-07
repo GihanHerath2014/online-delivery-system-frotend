@@ -1,0 +1,478 @@
+<div *ngIf="states" >
+    <div>
+        <ul class="nav justify-content-center grey lighten-4 ">
+                <div *ngFor="let header of allCategoryList">
+                        <li class="nav-item">
+                                <a class="nav-link" (click)="categoryCatClick(header._id)">{{header.category_name}}</a>
+                            </li>
+                    </div>
+            <!-- <li class="nav-item">
+                <a class="nav-link" (click)="cat1Click()">Electronic Devices</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="cat2Click()" >Electronic Accessories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="cat3Click()">Women's Fashion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="cat4Click()" >Men's Fashion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="cat5Click()" >Watches & Accessories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="cat6Click()" >Health & Beauty</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="cat7Click()" >Home & Kitchen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="cat8Click()" >Sports & Outdoor</a>
+            </li> -->
+        </ul>
+    </div>
+
+<section class="text-center">
+    <!--Section heading-->
+    <h2 class="h2 font-weight-bold h2 py-3">Now Let's Get shopping</h2>
+    <!--Section description-->
+    <p class="grey-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
+        iure provident voluptate esse quasi,
+        veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+</section>
+
+<!-- Electronic Devices test -->
+<div *ngFor="let header of allCategoryList">
+<mdb-card  class="card pb-3 rounded w-100" >
+        <mdb-card-body>
+                <!-- {{filterItem1234(header._id)}} -->
+            <div class="container-fluid" id=cat{{header._id}}>
+                <div class="row">
+                    <h4 class="font-weight-bold">{{header.category_name}}</h4>
+                </div>
+                <hr class="bg-info">
+            </div>
+    
+            <div class="row">{{filterItem123(header.category_id)}}
+                <div class="col-md-2 pb-3" *ngFor="let card of electronicDeviceArray1">
+    
+                    <mdb-card class="card text-center pb-0 rounded hoverable ">
+                        <div class="view overlay"  (click)="itemDetailsClicked(card)" >
+                            <img class="card-img-top img-responsive" style="height: 150px;" [src]= "card.imgName" >
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+    
+                        <mdb-card-body>
+                            <mdb-card-text class="text-center" style="margin-top: 5px;">
+                                <h6 class="font-weight-bold">{{card.productName}}</h6>
+                                <h5>Rs.{{card.uniPrice}}/=</h5>
+                                <p>Available Quantity- {{card.availableQuantity}}</p>
+                                <hr>
+                                <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                            </mdb-card-text>
+                        </mdb-card-body>
+    
+                        <mdb-card-footer>
+                            <span class="float-center">
+                                <button type="button" mdbBtn color="info" mdbWavesEffect size="sm" (click)="addcartClicked(card); frame.show()" >Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                            </span>
+                        </mdb-card-footer>
+                    </mdb-card>
+                </div>
+            </div>
+    
+        </mdb-card-body>
+    </mdb-card>
+    </div>
+
+<!-- Electronic Devices -->
+<!-- <mdb-card  class="card pb-3 rounded w-100" >
+    <mdb-card-body>
+
+        <div class="container-fluid" id="cat1">
+            <div class="row">
+                <h4 class="font-weight-bold">Electronic Devices</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of electronicDeviceArray">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)" >
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]= "card.imgName" >
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>Rs.{{card.uniPrice}}/=</h5>
+                            <p>Available Quantity- {{card.availableQuantity}}</p>
+                            <hr>
+                            <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-center">
+                            <button type="button" mdbBtn color="info" mdbWavesEffect size="sm" (click)="addcartClicked(card); frame.show()" >Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                        </span>
+                    </mdb-card-footer>
+                </mdb-card>
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card> -->
+
+<!-- Electronic Accessories -->
+<!-- <mdb-card class="card pb-3 rounded w-100">
+    <mdb-card-body>
+
+        <div class="container-fluid" id="cat2">
+            <div class="row">
+                <h4 class="font-weight-bold">Electronic Accessories</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of electrocAccessoriesArray">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>Rs.{{card.uniPrice}}/=</h5>
+                            <p>Available Quantity- {{card.availableQuantity}}</p>
+                            <hr>
+                            <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-center">
+                            <button type="button" mdbBtn color="info" mdbWavesEffect size="sm" (click)="addcartClicked(card); frame.show()" >Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                        </span>
+                    </mdb-card-footer>
+                </mdb-card>
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card> -->
+
+<!-- Woman's Fashion -->
+<!-- <mdb-card class="card pb-3 rounded w-100">
+    <mdb-card-body>
+
+        <div class="container-fluid" id="cat3">
+            <div class="row">
+                <h4 class="font-weight-bold">Woman's Fashion</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of womansFashionArray">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>Rs.{{card.uniPrice}}/=</h5>
+                            <p>Available Quantity- {{card.availableQuantity}}</p>
+                            <hr>
+                            <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-center">
+                            <button type="button" mdbBtn color="info" mdbWavesEffect size="sm" (click)="addcartClicked(card); frame.show()" >Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                        </span>
+                    </mdb-card-footer>
+                </mdb-card>
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card> -->
+
+<!-- Men's Fashion -->
+<!-- <mdb-card class="card pb-3 rounded w-100">
+    <mdb-card-body>
+
+        <div class="container-fluid" id="cat4">
+            <div class="row">
+                <h4 class="font-weight-bold">Men's Fashion</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of mensFashionarray">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>Rs.{{card.uniPrice}}/=</h5>
+                            <p>Available Quantity- {{card.availableQuantity}}</p>
+                            <hr>
+                            <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-center">
+                            <button type="button" mdbBtn color="info" mdbWavesEffect size="sm" (click)="addcartClicked(card); frame.show()" >Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                        </span>
+                    </mdb-card-footer>
+                </mdb-card>
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card> -->
+
+<!-- Watches & Accessories -->
+<!-- <mdb-card class="card pb-3 rounded w-100">
+    <mdb-card-body>
+
+        <div class="container-fluid" id="cat5">
+            <div class="row">
+                <h4 class="font-weight-bold">Watches & Accessories</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of watchesArray">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>Rs.{{card.uniPrice}}/=</h5>
+                            <p>Available Quantity- {{card.availableQuantity}}</p>
+                            <hr>
+                            <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-center">
+                            <button type="button" mdbBtn color="info" mdbWavesEffect size="sm"  (click)="addcartClicked(card); frame.show()">Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                        </span>
+                    </mdb-card-footer>
+                </mdb-card>
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card> -->
+
+<!-- Health & Beauty -->
+<!-- <mdb-card class="card pb-3 rounded w-100">
+    <mdb-card-body>
+
+        <div class="container-fluid" id="cat6">
+            <div class="row">
+                <h4 class="font-weight-bold">Health & Beauty</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of healthArray">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>Rs.{{card.uniPrice}}/=</h5>
+                            <p>Available Quantity- {{card.availableQuantity}}</p>
+                            <hr>
+                            <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                        </mdb-card-text>
+                    </mdb-card-body>
+ 
+                    <mdb-card-footer>
+                        <span class="float-center">
+                            <button type="button" mdbBtn color="info" mdbWavesEffect size="sm" (click)="addcartClicked(card); frame.show()" >Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                        </span>
+                    </mdb-card-footer>
+                </mdb-card>
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card> -->
+
+<!-- Home & Kitchen -->
+<!-- <mdb-card class="card pb-3 rounded w-100">
+    <mdb-card-body>
+
+        <div class="container-fluid" id="cat7">
+            <div class="row">
+                <h4 class="font-weight-bold">Home & Kitchen</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of homeKitchenArray">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>Rs.{{card.uniPrice}}/=</h5>
+                            <p>Available Quantity- {{card.availableQuantity}}</p>
+                            <hr>
+                            <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-center">
+                            <button type="button" mdbBtn color="info" mdbWavesEffect size="sm"  (click)="addcartClicked(card); frame.show()">Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                        </span>
+                    </mdb-card-footer>
+                </mdb-card>
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card> -->
+
+<!-- Sports & Outdoor -->
+<!-- <mdb-card class="card pb-3 rounded w-100">
+    <mdb-card-body>
+
+        <div class="container-fluid" id="cat8">
+            <div class="row">
+                <h4 class="font-weight-bold">Sports & Outdor</h4>
+            </div>
+            <hr class="bg-info">
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 pb-3" *ngFor="let card of sportsarray">
+
+                <mdb-card class="card text-center pb-0 rounded hoverable ">
+                    <div class="view overlay"  (click)="itemDetailsClicked(card)">
+                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="card.imgName">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <mdb-card-body>
+                        <mdb-card-text class="text-center" style="margin-top: 5px;">
+                            <h6 class="font-weight-bold">{{card.productName}}</h6>
+                            <h5>Rs.{{card.uniPrice}}/=</h5>
+                            <p>Available Quantity- {{card.availableQuantity}}</p>
+                            <hr>
+                            <p><a (click)="shopViewClicked(card)">Shop : {{card.shopName}}</a></p>
+                        </mdb-card-text>
+                    </mdb-card-body>
+
+                    <mdb-card-footer>
+                        <span class="float-center">
+                            <button type="button" mdbBtn color="info" mdbWavesEffect size="sm" (click)="addcartClicked(card); frame.show()" >Add<mdb-icon fas icon="shopping-cart" class="ml-1"></mdb-icon></button>
+                        </span>
+                    </mdb-card-footer>
+                </mdb-card>
+            </div>
+        </div>
+
+    </mdb-card-body>
+</mdb-card> -->
+</div>
+
+<app-item-details-for-cart *ngIf="imgview" [property]="selectedProduct">
+    
+</app-item-details-for-cart>
+
+
+<app-product-by-shop *ngIf="shopview" [property1]="selectedProduct">
+    
+</app-product-by-shop>
+
+<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+          <p>A new item has bean added to shopping Cart</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect (click)="viewShoppingCart()">View Shopping cart
+          <mdb-icon far icon="check" class="ml-1"></mdb-icon>
+        </a>
+        <a type="button" mdbBtn color="danger" outline="true" class="waves-effect" mdbWavesEffect (click)="continueShopping();frame.hide()">Continue shopping</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+

@@ -1,0 +1,93 @@
+<!-- Material form subscription -->
+<mdb-card>
+
+    <mdb-card-header class="info-color white-text text-center py-4">
+      <h5>
+        <strong>Confirm Order</strong>
+      </h5>
+    </mdb-card-header>
+  
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5">
+        <table mdbTable striped="true">
+            <tbody >
+                <tr mdbTableCol>
+                    <td>Order ID</td>
+                    <td>#101542</td>
+                    <td></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td><label for="materialSubscriptionFormFullName">Full Name</label></td>
+                    <td><input type="text" name="materialSubscriptionFormFullName"  class="form-control"   [(ngModel)]="credentials.customerName"  mdbInput>
+                    </td>
+                    <!-- <td>Full Name</td>
+                    <td>: {{name}}</td>
+                    <td> <mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon></td> -->
+                </tr>
+                <tr mdbTableCol>
+                        <td><label for="materialSubscriptionFormEmail">Email</label></td>
+                        <td><input type="text" name="materialSubscriptionFormEmail"  class="form-control"   placeholder="{{credentials.email}}"  mdbInput>
+                        </td>
+                    <!-- <td>Email</td>
+                    <td>: {{email}}</td>
+                    <td></td> -->
+                </tr>
+                <tr mdbTableCol>
+                        <td><label for="materialSubscriptionFormAddress">Address</label></td>
+                        <td><input type="text" name="materialSubscriptionFormAddress"  class="form-control"   placeholder="{{credentials.address}}"  mdbInput>
+                        </td>
+                    <!-- <td>Billing Address</td>
+                    <td>: {{address}}</td> -->
+                    <!-- <td><mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon></td> -->
+                </tr>
+                <tr mdbTableCol>
+                        <td><label for="materialSubscriptionFormNumber">Mobile Number</label></td>
+                        <td><input type="text" name="materialSubscriptionFormNumber"  class="form-control"   placeholder="{{credentials.mobileNumber}}"  mdbInput>
+                        </td>
+                    <!-- <td>Contact Number</td>
+                    <td>: {{contact}}</td>
+                    <td><mdb-icon fas icon="pen" class="grey-text ml-3"></mdb-icon></td> -->
+                </tr>
+                <tr mdbTableCol>
+                    <td>Total Price</td>
+                    <td>: Rs:{{""+tatal}}/=</td>
+                    <td></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Delivery Date</td>
+                    <td>{{": "+ date}}</td>
+                    <td></td>
+                </tr>
+                <tr mdbTableCol>
+                    <td>Payement Type</td>
+                    <td>
+                        <div>
+                            <!-- Default inline 1-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" class="custom-control-input" value ='Personal' id="defaultInline1" name="inlineDefaultRadios"  
+                             (click)="getCash()" mdbInput >
+                              <label class="custom-control-label" for="defaultInline1">Cash On Delivery</label>
+                            </div>
+                    
+                            <!-- Default inline 2-->
+                            <div class="custom-control custom-radio custom-control-inline">
+                              <input type="radio" class="custom-control-input" value ="Shared" id="defaultInline2" name="inlineDefaultRadios"
+                              (click)="getCard()" mdbInput >
+                              <label class="custom-control-label" for="defaultInline2">Card Payment</label>
+                            </div>
+                          </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="button" mdbBtn color="danger" (click)="confirmOrder()"  mdbWavesEffect>Confirm Order</button></td>
+                    <td></td>
+                </tr>
+            </tbody>
+          </table>
+    </mdb-card-body>
+
+  </mdb-card>
+  <!-- Material form subscription -->
+
