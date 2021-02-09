@@ -3,7 +3,7 @@
 
     constructor() { }
 
-    private traget =// "http://localhost:3000/";
+    private traget = //"http://localhost:3000/";
         "http://onlinedelivery01.herokuapp.com/";
 
 getStartPoint():string{
